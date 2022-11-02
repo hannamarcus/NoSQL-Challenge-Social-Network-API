@@ -10,7 +10,7 @@ module.exports = {
     Thought.findOne({ _id: req.params.id })
       .then((thought) =>
         !thought
-          ? res.status(404).json({ message: 'No thought with that ID' })
+          ? res.status(404).json({ message: 'Please try again. No thought with that ID found' })
           : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));
@@ -27,7 +27,7 @@ module.exports = {
         })
         .then((thought) =>
           !thought
-            ? res.status(404).json({ message: 'No thought with this id!' })
+            ? res.status(404).json({ message: 'Please try again. No thought with that ID found' })
             : res.json(thought)
         )
         .catch((err) => {
@@ -43,7 +43,7 @@ module.exports = {
       )
         .then((thought) =>
           !thought
-            ? res.status(404).json({ message: 'No thought with this id!' })
+            ? res.status(404).json({ message: 'Please try again. No thought with that ID found' })
             : res.json(thought)
         )
         .catch((err) => {
@@ -55,7 +55,7 @@ module.exports = {
     Thought.findOneAndRemove({ _id: req.params.id })
     .then((thought) =>
       !thought
-        ? res.status(404).json({ message: 'No thought with this id!' })
+        ? res.status(404).json({ message: 'Please try again. No thought with that ID found' })
         : User.findOneAndUpdate(
             { videos: req.params.id },
             { $pull: { videos: req.params.id } },
@@ -65,7 +65,7 @@ module.exports = {
     .then((thought) =>
           !thought
             ? res.status(404).json({
-                message: 'thought deleted',
+                message: 'Thought not deleted',
               })
             : res.json({ message: 'Thought has been successfully deleted' })
         )
@@ -84,9 +84,9 @@ module.exports = {
         .then((thought) => 
             !thought
                 ? res.status(404).json({
-                    message: 'reaction not created',
+                    message: 'Reaction not created',
                 })
-                : res.json({ message: 'Reaction has been created'})
+                : res.json({ message: 'Reaction has been successfully created'})
             )
             .catch((err) => {
                 console.log(err);
@@ -102,7 +102,7 @@ module.exports = {
     )
     .then((thought) =>
     !thought
-      ? res.status(404).json({ message: 'No thought with this id!' })
+      ? res.status(404).json({ message: 'Please try again. No thought with that ID found' })
       : res.json(thought)
   )
   .catch((err) => res.status(500).json(err));
