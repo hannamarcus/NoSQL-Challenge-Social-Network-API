@@ -1,12 +1,12 @@
 const { User, Thought } = require('../models');
 
 module.exports = {
-    getAllUsers(req, res) {
+    getUsers(req, res) {
         User.find()
         .then(async (users) => {
           const userObj = {
             users,
-            friendCount: await friendCount,
+            //friendCount: await friendCount,
           };
           return res.json(userObj);
         })
@@ -27,7 +27,7 @@ module.exports = {
       return res.status(500).json(err);
     });
 },
-    createNewUser(req, res){
+    createUser(req, res){
         User.create(req.body)
             .then((user) => res.json(user))
             .catch((err) => res.status(500).json(err));
@@ -64,7 +64,7 @@ module.exports = {
             res.status(500).json(err);
           });
       },
-      
+
     addFriend(req, res){
         User.findOneAndUpdate(
             { _id: req.params.userId },
@@ -79,7 +79,7 @@ module.exports = {
         .catch((err) => res.status(500).json(err));
     },
 
-    removeFriend(req, res){
+    deleteFriend(req, res){
         User.findOneAndUpdate(
             { _id: req.params.userId },
             { $pull: { friends: req.params.friendId }},
