@@ -1,11 +1,11 @@
 # NoSQL-Challenge-Social-Network-API
 
-# User Story
+## User Story
 * AS A social media startup
 * I WANT an API for my social network that uses a NoSQL database
 * SO THAT my website can handle large amounts of unstructured data
 
-# Acceptance Criteria
+## Acceptance Criteria
 * GIVEN a social network API
 * WHEN I enter the command to invoke the application
 * THEN my server is started and the Mongoose models are synced to the MongoDB database
@@ -16,12 +16,12 @@
 * WHEN I test API POST and DELETE routes in Insomnia
 * THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
 
-# Usage
+## Usage
 * Run npm i
 * Run npm start
 
-# Link to Video
+## Link to Video
 * https://watch.screencastify.com/v/ciasUSXpEAxcqY3mstIk
 
-# Screenshot of Deployed Backend 
+## Screenshot of Deployed Backend 
 ![Screen Shot 2022-11-05 at 1 51 43 PM](https://user-images.githubusercontent.com/106893601/200140899-22211733-6f70-420b-b1aa-b7243d3846e1.png)
