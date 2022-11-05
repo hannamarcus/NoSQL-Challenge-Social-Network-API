@@ -22,3 +22,6 @@
 
 # Link to Video
 * https://watch.screencastify.com/v/ciasUSXpEAxcqY3mstIk
+
+# Screenshot of Deployed Backend 
+![Screen Shot 2022-11-05 at 1 51 43 PM](https://user-images.githubusercontent.com/106893601/200140899-22211733-6f70-420b-b1aa-b7243d3846e1.png)
